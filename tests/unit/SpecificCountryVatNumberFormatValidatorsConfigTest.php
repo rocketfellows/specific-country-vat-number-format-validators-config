@@ -16,7 +16,7 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
 
     public function testSpecificConfigImplementedInterface(): void
     {
-        $this->assertEquals(self::EXPECTED_INTERFACE_IMPLEMENTATION, (new RUVatNumberFormatValidatorsConfig()));
+        $this->assertInstanceOf(self::EXPECTED_INTERFACE_IMPLEMENTATION, (new RUVatNumberFormatValidatorsConfig()));
     }
 
     public function testDefaultInitialization(): void
@@ -24,10 +24,14 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
         $config = new RUVatNumberFormatValidatorsConfig();
 
         $this->assertEquals(ISO3166::RU(), $config->getCountry());
-        $this->assertEquals([(new RUVatFormatValidator()),], $config->getValidators());
+        $this->assertEquals(
+            (new CountryVatFormatValidators((new RUVatFormatValidator()))),
+            $config->getValidators()
+        );
     }
 
     /**
+     * @dataProvider getSpecificConfigValidators
      * @param CountryVatFormatValidatorInterface|null $defaultValidator
      * @param CountryVatFormatValidators|null $additionalValidators
      * @param CountryVatFormatValidatorInterface[] $expectedCountryValidators
@@ -109,6 +113,36 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
                     $secondAdditionalValidator,
                     $thirdAdditionalValidator,
                     $thirdAdditionalValidator,
+                ],
+            ],
+            'default validator not set and additional validators set with repetition' => [
+                'defaultValidator' => null,
+                'additionalValidators' => new CountryVatFormatValidators(
+                    $defaultValidator,
+                    $defaultValidator,
+                    $defaultValidator,
+                    $firstAdditionalValidator,
+                    $firstAdditionalValidator,
+                    $firstAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $thirdAdditionalValidator,
+                    $thirdAdditionalValidator
+                ),
+                'expectedCountryValidators' => [
+                    (new RUVatFormatValidator()),
+                    $defaultValidator,
+                    $defaultValidator,
+                    $defaultValidator,
+                    $firstAdditionalValidator,
+                    $firstAdditionalValidator,
+                    $firstAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $thirdAdditionalValidator,
+                    $thirdAdditionalValidator
                 ],
             ],
         ];
