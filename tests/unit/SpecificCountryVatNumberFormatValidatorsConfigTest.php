@@ -19,6 +19,14 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
         $this->assertEquals(self::EXPECTED_INTERFACE_IMPLEMENTATION, (new RUVatNumberFormatValidatorsConfig()));
     }
 
+    public function testDefaultInitialization(): void
+    {
+        $config = new RUVatNumberFormatValidatorsConfig();
+
+        $this->assertEquals(ISO3166::RU(), $config->getCountry());
+        $this->assertEquals([(new RUVatFormatValidator()),], $config->getValidators());
+    }
+
     /**
      * @param CountryVatFormatValidatorInterface|null $defaultValidator
      * @param CountryVatFormatValidators|null $additionalValidators
