@@ -78,6 +78,13 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
                     $thirdAdditionalValidator,
                 ],
             ],
+            'default validator set and additional validators set and empty' => [
+                'defaultValidator' => $defaultValidator,
+                'additionalValidators' => new CountryVatFormatValidators(),
+                'expectedCountryValidators' => [
+                    $defaultValidator,
+                ],
+            ],
         ];
     }
 }
