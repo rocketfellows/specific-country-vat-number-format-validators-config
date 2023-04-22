@@ -10,7 +10,8 @@
     "require": {
         "php": ">=7.4",
         "arslanimamutdinov/iso-standard-3166": "1.0.2",
-        "rocketfellows/country-vat-format-validator-interface": "1.1.0"
+        "rocketfellows/country-vat-format-validator-interface": "1.1.0",
+        "rocketfellows/country-vat-number-format-validators-config": "1.0.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",

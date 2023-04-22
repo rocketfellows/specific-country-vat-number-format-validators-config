@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12cb4662082e551c5ed371d2d1167022",
+    "content-hash": "41d2816520fb22dfd1d454328252267f",
     "packages": [
         {
             "name": "arslanimamutdinov/iso-standard-3166",
@@ -135,6 +135,54 @@
                 "source": "https://github.com/rocketfellows/country-vat-format-validator-interface/tree/v1.1.0"
             },
             "time": "2023-04-01T17:36:41+00:00"
+        },
+        {
+            "name": "rocketfellows/country-vat-number-format-validators-config",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rocketfellows/country-vat-number-format-validators-config.git",
+                "reference": "f6240e54b8dbcabd7b29b9228317b28663093c46"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rocketfellows/country-vat-number-format-validators-config/zipball/f6240e54b8dbcabd7b29b9228317b28663093c46",
+                "reference": "f6240e54b8dbcabd7b29b9228317b28663093c46",
+                "shasum": ""
+            },
+            "require": {
+                "arslanimamutdinov/iso-standard-3166": "1.0.2",
+                "php": ">=7.4",
+                "rocketfellows/country-vat-format-validator-interface": "1.1.0",
+                "rocketfellows/tuple": "1.0.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^8.5",
+                "roave/security-advisories": "dev-latest",
+                "squizlabs/php_codesniffer": "3.6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "rocketfellows\\CountryVatNumberFormatValidatorsConfig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arslan Imamutdinov",
+                    "email": "ara.imamutdinov@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/rocketfellows/country-vat-number-format-validators-config/issues",
+                "source": "https://github.com/rocketfellows/country-vat-number-format-validators-config/tree/v1.0.0"
+            },
+            "time": "2023-04-22T08:44:07+00:00"
         },
         {
             "name": "rocketfellows/tuple",
