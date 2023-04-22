@@ -69,6 +69,22 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
                     (new RUVatFormatValidator()),
                 ],
             ],
+            'default validator not set and additional validators set' => [
+                'defaultValidator' => null,
+                'additionalValidators' => new CountryVatFormatValidators(
+                    $defaultValidator,
+                    $firstAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $thirdAdditionalValidator
+                ),
+                'expectedCountryValidators' => [
+                    (new RUVatFormatValidator()),
+                    $defaultValidator,
+                    $firstAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $thirdAdditionalValidator
+                ],
+            ],
             'default validator set and additional validators not set' => [
                 'defaultValidator' => $defaultValidator,
                 'additionalValidators' => null,
@@ -76,7 +92,7 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
                     $defaultValidator,
                 ],
             ],
-            'default validator set and additional validators set and not empty' => [
+            'default validator set and additional validators set' => [
                 'defaultValidator' => $defaultValidator,
                 'additionalValidators' => new CountryVatFormatValidators(
                     $firstAdditionalValidator,
@@ -88,61 +104,6 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
                     $firstAdditionalValidator,
                     $secondAdditionalValidator,
                     $thirdAdditionalValidator,
-                ],
-            ],
-            'default validator set and additional validators set and empty' => [
-                'defaultValidator' => $defaultValidator,
-                'additionalValidators' => new CountryVatFormatValidators(),
-                'expectedCountryValidators' => [
-                    $defaultValidator,
-                ],
-            ],
-            'default validator set and additional validators set with repetition' => [
-                'defaultValidator' => $defaultValidator,
-                'additionalValidators' => new CountryVatFormatValidators(
-                    $defaultValidator,
-                    $firstAdditionalValidator,
-                    $secondAdditionalValidator,
-                    $thirdAdditionalValidator,
-                    $thirdAdditionalValidator
-                ),
-                'expectedCountryValidators' => [
-                    $defaultValidator,
-                    $defaultValidator,
-                    $firstAdditionalValidator,
-                    $secondAdditionalValidator,
-                    $thirdAdditionalValidator,
-                    $thirdAdditionalValidator,
-                ],
-            ],
-            'default validator not set and additional validators set with repetition' => [
-                'defaultValidator' => null,
-                'additionalValidators' => new CountryVatFormatValidators(
-                    $defaultValidator,
-                    $defaultValidator,
-                    $defaultValidator,
-                    $firstAdditionalValidator,
-                    $firstAdditionalValidator,
-                    $firstAdditionalValidator,
-                    $secondAdditionalValidator,
-                    $secondAdditionalValidator,
-                    $secondAdditionalValidator,
-                    $thirdAdditionalValidator,
-                    $thirdAdditionalValidator
-                ),
-                'expectedCountryValidators' => [
-                    (new RUVatFormatValidator()),
-                    $defaultValidator,
-                    $defaultValidator,
-                    $defaultValidator,
-                    $firstAdditionalValidator,
-                    $firstAdditionalValidator,
-                    $firstAdditionalValidator,
-                    $secondAdditionalValidator,
-                    $secondAdditionalValidator,
-                    $secondAdditionalValidator,
-                    $thirdAdditionalValidator,
-                    $thirdAdditionalValidator
                 ],
             ],
         ];
