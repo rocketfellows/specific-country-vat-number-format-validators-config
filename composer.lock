@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d936fad5c9637458aa19323954938d6",
+    "content-hash": "12cb4662082e551c5ed371d2d1167022",
     "packages": [
         {
             "name": "arslanimamutdinov/iso-standard-3166",
@@ -90,6 +90,92 @@
                 "source": "https://github.com/arslanim/iso-standard-utilities/tree/v1.0.1"
             },
             "time": "2022-03-20T15:56:28+00:00"
+        },
+        {
+            "name": "rocketfellows/country-vat-format-validator-interface",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rocketfellows/country-vat-format-validator-interface.git",
+                "reference": "3a04a279d5f8b82bf58c6fd389e73f19f46c6937"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rocketfellows/country-vat-format-validator-interface/zipball/3a04a279d5f8b82bf58c6fd389e73f19f46c6937",
+                "reference": "3a04a279d5f8b82bf58c6fd389e73f19f46c6937",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "rocketfellows/tuple": "^1.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.90",
+                "phpunit/phpunit": "^8.5",
+                "squizlabs/php_codesniffer": "3.6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "rocketfellows\\CountryVatFormatValidatorInterface\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arslan Imamutdinov",
+                    "email": "ara.imamutdinov@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/rocketfellows/country-vat-format-validator-interface/issues",
+                "source": "https://github.com/rocketfellows/country-vat-format-validator-interface/tree/v1.1.0"
+            },
+            "time": "2023-04-01T17:36:41+00:00"
+        },
+        {
+            "name": "rocketfellows/tuple",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rocketfellows/tuple.git",
+                "reference": "414659abcdea3d08333499e2f39cea7e221a8f90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rocketfellows/tuple/zipball/414659abcdea3d08333499e2f39cea7e221a8f90",
+                "reference": "414659abcdea3d08333499e2f39cea7e221a8f90",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.90",
+                "phpunit/phpunit": "^8.5",
+                "squizlabs/php_codesniffer": "3.6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "rocketfellows\\tuple\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arslan Imamutdinov",
+                    "email": "ara.imamutdinov@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/rocketfellows/tuple/issues",
+                "source": "https://github.com/rocketfellows/tuple/tree/v1.0.0"
+            },
+            "time": "2022-05-30T20:28:34+00:00"
         }
     ],
     "packages-dev": [
