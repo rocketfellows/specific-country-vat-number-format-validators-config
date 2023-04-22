@@ -43,6 +43,8 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
 
     public function getSpecificConfigValidators(): array
     {
+        $defaultValidator = $this->createMock(CountryVatFormatValidatorInterface::class);
+
         $firstAdditionalValidator = $this->createMock(CountryVatFormatValidatorInterface::class);
         $secondAdditionalValidator = $this->createMock(CountryVatFormatValidatorInterface::class);
         $thirdAdditionalValidator = $this->createMock(CountryVatFormatValidatorInterface::class);
@@ -53,6 +55,13 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
                 'additionalValidators' => null,
                 'expectedCountryValidators' => [
                     (new RUVatFormatValidator()),
+                ],
+            ],
+            'default validator set and additional validators not set' => [
+                'defaultValidator' => $defaultValidator,
+                'additionalValidators' => null,
+                'expectedCountryValidators' => [
+                    $defaultValidator,
                 ],
             ],
         ];
