@@ -120,6 +120,34 @@ class SpecificCountryVatNumberFormatValidatorsConfigTest extends TestCase
                     $defaultValidator,
                 ],
             ],
+            'default validator not set and additional validators set with repetition' => [
+                'defaultValidator' => null,
+                'additionalValidators' => new CountryVatFormatValidators(
+                    $defaultValidator,
+                    $firstAdditionalValidator,
+                    $firstAdditionalValidator,
+                    $firstAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $thirdAdditionalValidator,
+                    $thirdAdditionalValidator,
+                    $thirdAdditionalValidator,
+                ),
+                'expectedCountryValidators' => [
+                    (new RUVatFormatValidator()),
+                    $defaultValidator,
+                    $firstAdditionalValidator,
+                    $firstAdditionalValidator,
+                    $firstAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $secondAdditionalValidator,
+                    $thirdAdditionalValidator,
+                    $thirdAdditionalValidator,
+                    $thirdAdditionalValidator,
+                ],
+            ],
         ];
     }
 }
