@@ -3,7 +3,7 @@
 ![Code Coverage Badge](./badge.svg)
 
 This package provides an abstract class for configuring a list of validators for a specific country.
-It is one of the implementations of the **_rocketfellows\CountryVatNumberFormatValidatorsConfig\CountryVatNumberFormatValidatorsConfigInterface_** interface.
+It is one of the implementations of the **_rocketfellows\CountryVatNumberFormatValidatorsConfig\CountryVatNumberFormatValidatorsConfigInterface_**&nbsp;interface.
 
 ## Installation
 
